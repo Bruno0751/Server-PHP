@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatorial</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #0000ffad;
+            padding-top: 151px;
+            margin: 0;
+        }
+
+        #principal {
+            border: 1px solid #000000;
+            width: 80%;
+            margin: 0 auto;
+            border-radius: 10px;
+            background-color: #ffffff;
+            padding: 0;
+            height: 152px;
+        }
+
+        #inputFat {
+            border-radius: 9px;
+            width: 15%;
+            text-align: center;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        #buttonFat {
+            border-radius: 9px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="principal">
+
+        <h1>Fatorial</h1>
+        <input type="number" name="numFat" id="inputFat" placeholder="Number">
+        <div>
+            <button type="button" id="buttonFat" onClick="fatoring()">Fator</button>
+        </div>
+        <div id="result"></div>
+
+    </div>
+    <script>
+        function fatoring() {
+            let numero = Number(document.querySelector("input#inputFat").value);
+            let txtResult = document.querySelector("div#result");
+            if (numero.value == "") {
+                alert("Campo Vazio");
+            } else {
+                let fat = 1;
+                for (let i = numero; i > 1; i--) {
+                    fat *= i;
+                }
+                txtResult.innerHTML = `Fatorial ${fat}`;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
